@@ -66,20 +66,37 @@
         ::-webkit-scrollbar-thumb { background: #222; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
-        /* Carrossel Mobile */
+        /* MODIFICAÇÃO: Carrossel Mobile Natural */
         @media (max-width: 768px) {
+            .carousel-wrapper {
+                position: relative;
+                margin: 0 -1.5rem; /* Extende para as bordas da tela */
+                padding: 0 1.5rem;
+            }
+
+            /* Efeito de Gradiente nas pontas para sinalizar scroll */
+            .carousel-wrapper::after {
+                content: '';
+                position: absolute;
+                top: 0; right: 0; bottom: 0;
+                width: 50px;
+                background: linear-gradient(to left, var(--bg-dark), transparent);
+                pointer-events: none;
+                z-index: 10;
+            }
+
             #pacotes .carousel-container {
                 display: flex !important;
                 overflow-x: auto;
                 scroll-snap-type: x mandatory;
                 gap: 16px;
-                padding: 10px 20px 40px 20px;
+                padding: 20px 0 40px 0;
                 scroll-behavior: smooth;
                 -webkit-overflow-scrolling: touch;
             }
 
             #pacotes .price-card {
-                min-width: 85vw;
+                min-width: 80vw; /* Deixa uma sobra do próximo card visível */
                 scroll-snap-align: center;
             }
 
@@ -163,77 +180,70 @@
                 <p class="text-zinc-500 text-xl max-w-2xl mx-auto">Qualidade de estúdio profissional com agendamento flexível.</p>
             </div>
 
-            <div class="flex md:hidden justify-center gap-6 mb-10">
-                <button onclick="document.querySelector('.carousel-container').scrollBy({left: -300, behavior: 'smooth'})" class="w-14 h-14 rounded-full border border-[#00ff88] text-[#00ff88] flex items-center justify-center active:bg-[#00ff88] active:text-black transition-all">
-                    <span class="material-symbols-outlined">arrow_back</span>
-                </button>
-                <button onclick="document.querySelector('.carousel-container').scrollBy({left: 300, behavior: 'smooth'})" class="w-14 h-14 rounded-full border border-[#00ff88] text-[#00ff88] flex items-center justify-center active:bg-[#00ff88] active:text-black transition-all">
-                    <span class="material-symbols-outlined">arrow_forward</span>
-                </button>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch carousel-container">
-                <div class="price-card rounded-[3rem] p-10 group">
-                    <div class="mb-10">
-                        <div class="w-full h-48 rounded-3xl overflow-hidden mb-8">
-                            <img alt="Mix e Voz" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&q=80&w=1000">
+            <div class="carousel-wrapper">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch carousel-container">
+                    <div class="price-card rounded-[3rem] p-10 group">
+                        <div class="mb-10">
+                            <div class="w-full h-48 rounded-3xl overflow-hidden mb-8">
+                                <img alt="Mix e Voz" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&q=80&w=1000">
+                            </div>
+                            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-500 mb-2 block">Vocal Session</span>
+                            <h3 class="text-3xl font-bold uppercase tracking-tight">MIX E VOZ</h3>
+                            <p class="text-zinc-400 mt-4 text-sm italic leading-relaxed">Ideal para quem já tem o beat e precisa de qualidade vocal absoluta.</p>
                         </div>
-                        <span class="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-500 mb-2 block">Vocal Session</span>
-                        <h3 class="text-3xl font-bold uppercase tracking-tight">MIX E VOZ</h3>
-                        <p class="text-zinc-400 mt-4 text-sm italic leading-relaxed">Ideal para quem já tem o beat e precisa de qualidade vocal absoluta.</p>
+                        <div class="mb-10 flex items-baseline gap-2">
+                            <span class="text-[#00ff88] font-black text-xl italic">R$</span>
+                            <span class="text-7xl font-black">250</span>
+                        </div>
+                        <ul class="space-y-5 mb-12 border-t border-white/5 pt-8">
+                            <li class="flex items-center gap-4 text-sm font-semibold text-zinc-300"><span class="material-symbols-outlined text-[#00ff88] text-xl">mic</span> Captação de Voz Profissional</li>
+                            <li class="flex items-center gap-4 text-sm font-semibold text-zinc-300"><span class="material-symbols-outlined text-[#00ff88] text-xl">equalizer</span> Mix & Master de Elite</li>
+                            <li class="flex items-center gap-4 text-sm font-bold text-[#00ff88]"><span class="material-symbols-outlined text-xl">redeem</span> BÔNUS: Arte da Capa</li>
+                        </ul>
+                        <button onclick="openPlanModal('Mix e Voz', '250')" class="w-full py-5 border border-[#00ff88] text-[#00ff88] rounded-2xl text-center font-black uppercase tracking-widest text-xs hover:bg-[#00ff88] hover:text-black transition-all">Selecionar Plano</button>
                     </div>
-                    <div class="mb-10 flex items-baseline gap-2">
-                        <span class="text-[#00ff88] font-black text-xl italic">R$</span>
-                        <span class="text-7xl font-black">250</span>
-                    </div>
-                    <ul class="space-y-5 mb-12 border-t border-white/5 pt-8">
-                        <li class="flex items-center gap-4 text-sm font-semibold text-zinc-300"><span class="material-symbols-outlined text-[#00ff88] text-xl">mic</span> Captação de Voz Profissional</li>
-                        <li class="flex items-center gap-4 text-sm font-semibold text-zinc-300"><span class="material-symbols-outlined text-[#00ff88] text-xl">equalizer</span> Mix & Master de Elite</li>
-                        <li class="flex items-center gap-4 text-sm font-bold text-[#00ff88]"><span class="material-symbols-outlined text-xl">redeem</span> BÔNUS: Arte da Capa</li>
-                    </ul>
-                    <button onclick="openPlanModal('Mix e Voz', '250')" class="w-full py-5 border border-[#00ff88] text-[#00ff88] rounded-2xl text-center font-black uppercase tracking-widest text-xs hover:bg-[#00ff88] hover:text-black transition-all">Selecionar Plano</button>
-                </div>
 
-                <div class="price-card featured rounded-[3rem] p-10 group bg-zinc-900/40">
-                    <div class="mb-10">
-                        <div class="w-full h-48 rounded-3xl overflow-hidden mb-8">
-                            <img alt="Produção Pro" class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-700" src="https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?auto=format&fit=crop&q=80&w=1000">
+                    <div class="price-card featured rounded-[3rem] p-10 group bg-zinc-900/40">
+                        <div class="mb-10">
+                            <div class="w-full h-48 rounded-3xl overflow-hidden mb-8">
+                                <img alt="Produção Pro" class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-700" src="https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?auto=format&fit=crop&q=80&w=1000">
+                            </div>
+                            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#00ff88] mb-2 block">Popular Choice</span>
+                            <h3 class="text-3xl font-bold uppercase tracking-tight">PRODUÇÃO PRO</h3>
+                            <p class="text-zinc-300 mt-4 text-sm italic leading-relaxed">Produção completa: do beat exclusivo ao master pronto para o mundo.</p>
                         </div>
-                        <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#00ff88] mb-2 block">Popular Choice</span>
-                        <h3 class="text-3xl font-bold uppercase tracking-tight">PRODUÇÃO PRO</h3>
-                        <p class="text-zinc-300 mt-4 text-sm italic leading-relaxed">Produção completa: do beat exclusivo ao master pronto para o mundo.</p>
+                        <div class="mb-10 flex items-baseline gap-2">
+                            <span class="text-[#00ff88] font-black text-xl italic">R$</span>
+                            <span class="text-8xl font-black text-[#00ff88]">350</span>
+                        </div>
+                        <ul class="space-y-5 mb-12 border-t border-white/5 pt-8">
+                            <li class="flex items-center gap-4 text-sm font-black text-white"><span class="material-symbols-outlined text-[#00ff88] text-xl">music_note</span> Beat Instrumental Exclusivo</li>
+                            <li class="flex items-center gap-4 text-sm font-semibold text-zinc-300"><span class="material-symbols-outlined text-[#00ff88] text-xl">mic</span> Captação Sem Limite de Take</li>
+                            <li class="flex items-center gap-4 text-sm font-bold text-[#00ff88]"><span class="material-symbols-outlined text-xl">redeem</span> BÔNUS: Design Exclusivo</li>
+                        </ul>
+                        <button onclick="openPlanModal('Produção Pro', '350')" class="w-full py-5 bg-[#00ff88] text-black rounded-2xl text-center font-black uppercase tracking-widest text-xs hover:bg-[#00cc6a] transition-all shadow-xl shadow-[#00ff88]/20">Começar Agora</button>
                     </div>
-                    <div class="mb-10 flex items-baseline gap-2">
-                        <span class="text-[#00ff88] font-black text-xl italic">R$</span>
-                        <span class="text-8xl font-black text-[#00ff88]">350</span>
-                    </div>
-                    <ul class="space-y-5 mb-12 border-t border-white/5 pt-8">
-                        <li class="flex items-center gap-4 text-sm font-black text-white"><span class="material-symbols-outlined text-[#00ff88] text-xl">music_note</span> Beat Instrumental Exclusivo</li>
-                        <li class="flex items-center gap-4 text-sm font-semibold text-zinc-300"><span class="material-symbols-outlined text-[#00ff88] text-xl">mic</span> Captação Sem Limite de Take</li>
-                        <li class="flex items-center gap-4 text-sm font-bold text-[#00ff88]"><span class="material-symbols-outlined text-xl">redeem</span> BÔNUS: Design Exclusivo</li>
-                    </ul>
-                    <button onclick="openPlanModal('Produção Pro', '350')" class="w-full py-5 bg-[#00ff88] text-black rounded-2xl text-center font-black uppercase tracking-widest text-xs hover:bg-[#00cc6a] transition-all shadow-xl shadow-[#00ff88]/20">Começar Agora</button>
-                </div>
 
-                <div class="price-card rounded-[3rem] p-10 group">
-                    <div class="mb-10">
-                        <div class="w-full h-48 rounded-3xl overflow-hidden mb-8">
-                            <img alt="Audio e Video" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://images.unsplash.com/photo-1492619334760-2270ff971d2b?auto=format&fit=crop&q=80&w=1000">
+                    <div class="price-card rounded-[3rem] p-10 group">
+                        <div class="mb-10">
+                            <div class="w-full h-48 rounded-3xl overflow-hidden mb-8">
+                                <img alt="Audio e Video" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://images.unsplash.com/photo-1492619334760-2270ff971d2b?auto=format&fit=crop&q=80&w=1000">
+                            </div>
+                            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-500 mb-2 block">The Experience</span>
+                            <h3 class="text-3xl font-bold uppercase tracking-tight">AUDIO E VIDEO</h3>
+                            <p class="text-zinc-400 mt-4 text-sm italic leading-relaxed">Lance com impacto. O pacote completo de som e clipe cinematográfico.</p>
                         </div>
-                        <span class="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-500 mb-2 block">The Experience</span>
-                        <h3 class="text-3xl font-bold uppercase tracking-tight">AUDIO E VIDEO</h3>
-                        <p class="text-zinc-400 mt-4 text-sm italic leading-relaxed">Lance com impacto. O pacote completo de som e clipe cinematográfico.</p>
+                        <div class="mb-10 flex items-baseline gap-2">
+                            <span class="text-[#00ff88] font-black text-xl italic">R$</span>
+                            <span class="text-7xl font-black">750</span>
+                        </div>
+                        <ul class="space-y-5 mb-12 border-t border-white/5 pt-8">
+                            <li class="flex items-center gap-4 text-sm font-semibold text-zinc-300"><span class="material-symbols-outlined text-[#00ff88] text-xl">album</span> Áudio PRO Incluso</li>
+                            <li class="flex items-center gap-4 text-sm font-black text-white"><span class="material-symbols-outlined text-[#00ff88] text-xl">videocam</span> Clipe Performance (One Take)</li>
+                            <li class="flex items-center gap-4 text-sm font-bold text-[#00ff88]"><span class="material-symbols-outlined text-xl">redeem</span> BÔNUS: Consultoria</li>
+                        </ul>
+                        <button onclick="openPlanModal('Audio e Video', '750')" class="w-full py-5 border border-zinc-700 text-white rounded-2xl text-center font-black uppercase tracking-widest text-xs hover:border-[#00ff88] hover:text-[#00ff88] transition-all">Escolher Experiência</button>
                     </div>
-                    <div class="mb-10 flex items-baseline gap-2">
-                        <span class="text-[#00ff88] font-black text-xl italic">R$</span>
-                        <span class="text-7xl font-black">750</span>
-                    </div>
-                    <ul class="space-y-5 mb-12 border-t border-white/5 pt-8">
-                        <li class="flex items-center gap-4 text-sm font-semibold text-zinc-300"><span class="material-symbols-outlined text-[#00ff88] text-xl">album</span> Áudio PRO Incluso</li>
-                        <li class="flex items-center gap-4 text-sm font-black text-white"><span class="material-symbols-outlined text-[#00ff88] text-xl">videocam</span> Clipe Performance (One Take)</li>
-                        <li class="flex items-center gap-4 text-sm font-bold text-[#00ff88]"><span class="material-symbols-outlined text-xl">redeem</span> BÔNUS: Consultoria</li>
-                    </ul>
-                    <button onclick="openPlanModal('Audio e Video', '750')" class="w-full py-5 border border-zinc-700 text-white rounded-2xl text-center font-black uppercase tracking-widest text-xs hover:border-[#00ff88] hover:text-[#00ff88] transition-all">Escolher Experiência</button>
                 </div>
             </div>
         </div>
