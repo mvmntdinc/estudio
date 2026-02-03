@@ -1,1 +1,554 @@
+<html lang="pt-br"><head>
 
+<script class="injected-ffc2e83d85">
+(function(){'use strict';function g(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function t(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:g(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}var v=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};
+function w(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var x=w(this);function y(a,b){if(b)a:{var d=x;a=a.split(".");for(var h=0;h<a.length-1;h++){var k=a[h];if(!(k in d))break a;d=d[k]}a=a[a.length-1];h=d[a];b=b(h);b!=h&&b!=null&&v(d,a,{configurable:!0,writable:!0,value:b})}}
+function z(a){if(!(a instanceof Object))throw new TypeError("Iterator result "+a+" is not an object");}function A(){this.u=!1;this.j=null;this.v=void 0;this.g=1;this.i=this.o=0;this.A=this.h=null}function B(a){if(a.u)throw new TypeError("Generator is already running");a.u=!0}A.prototype.B=function(a){this.v=a};function C(a,b){a.h={J:b,K:!0};a.g=a.o||a.i}A.prototype.getNextAddressJsc=function(){return this.g};A.prototype.getYieldResultJsc=function(){return this.v};
+A.prototype.return=function(a){this.h={return:a};this.g=this.i};A.prototype["return"]=A.prototype.return;A.prototype.H=function(a){this.h={m:a};this.g=this.i};A.prototype.jumpThroughFinallyBlocks=A.prototype.H;A.prototype.l=function(a,b){this.g=b;return{value:a}};A.prototype.yield=A.prototype.l;A.prototype.P=function(a,b){a=t(a);var d=a.next();z(d);if(d.done)this.v=d.value,this.g=b;else return this.j=a,this.l(d.value,b)};A.prototype.yieldAll=A.prototype.P;A.prototype.m=function(a){this.g=a};
+A.prototype.jumpTo=A.prototype.m;A.prototype.I=function(){this.g=0};A.prototype.jumpToEnd=A.prototype.I;A.prototype.N=function(a,b){this.o=a;b!=void 0&&(this.i=b)};A.prototype.setCatchFinallyBlocks=A.prototype.N;A.prototype.O=function(a){this.o=0;this.i=a||0};A.prototype.setFinallyBlock=A.prototype.O;A.prototype.M=function(a,b){this.g=a;this.o=b||0};A.prototype.leaveTryBlock=A.prototype.M;A.prototype.D=function(a){this.o=a||0;a=this.h.J;this.h=null;return a};A.prototype.enterCatchBlock=A.prototype.D;
+A.prototype.F=function(a,b,d){d?this.A[d]=this.h:this.A=[this.h];this.o=a||0;this.i=b||0};A.prototype.enterFinallyBlock=A.prototype.F;A.prototype.L=function(a,b){b=this.A.splice(b||0)[0];(b=this.h=this.h||b)?b.K?this.g=this.o||this.i:b.m!=void 0&&this.i<b.m?(this.g=b.m,this.h=null):this.g=this.i:this.g=a};A.prototype.leaveFinallyBlock=A.prototype.L;A.prototype.G=function(a){return new D(a)};A.prototype.forIn=A.prototype.G;
+function D(a){this.i=a;this.g=[];for(var b in a)this.g.push(b);this.g.reverse()}D.prototype.h=function(){for(;this.g.length>0;){var a=this.g.pop();if(a in this.i)return a}return null};D.prototype.getNext=D.prototype.h;function E(a){this.g=new A;this.h=a}function G(a,b){B(a.g);var d=a.g.j;if(d)return H(a,"return"in d?d["return"]:function(h){return{value:h,done:!0}},b,a.g.return);a.g.return(b);return I(a)}
+function H(a,b,d,h){try{var k=b.call(a.g.j,d);z(k);if(!k.done)return a.g.u=!1,k;var m=k.value}catch(c){return a.g.j=null,C(a.g,c),I(a)}a.g.j=null;h.call(a.g,m);return I(a)}function I(a){for(;a.g.g;)try{var b=a.h(a.g);if(b)return a.g.u=!1,{value:b.value,done:!1}}catch(d){a.g.v=void 0,C(a.g,d)}a.g.u=!1;if(a.g.h){b=a.g.h;a.g.h=null;if(b.K)throw b.J;return{value:b.return,done:!0}}return{value:void 0,done:!0}}
+function J(a){this.next=function(b){B(a.g);a.g.j?b=H(a,a.g.j.next,b,a.g.B):(a.g.B(b),b=I(a));return b};this.throw=function(b){B(a.g);a.g.j?b=H(a,a.g.j["throw"],b,a.g.B):(C(a.g,b),b=I(a));return b};this.return=function(b){return G(a,b)};this[Symbol.iterator]=function(){return this}}function K(a){function b(h){return a.next(h)}function d(h){return a.throw(h)}return new Promise(function(h,k){function m(c){c.done?h(c.value):Promise.resolve(c.value).then(b,d).then(m,k)}m(a.next())})}
+function L(a){return K(new J(new E(a)))}y("Symbol",function(a){function b(m){if(this instanceof b)throw new TypeError("Symbol is not a constructor");return new d(h+(m||"")+"_"+k++,m)}function d(m,c){this.g=m;v(this,"description",{configurable:!0,writable:!0,value:c})}if(a)return a;d.prototype.toString=function(){return this.g};var h="jscomp_symbol_"+(Math.random()*1E9>>>0)+"_",k=0;return b});
+y("Symbol.iterator",function(a){if(a)return a;a=Symbol("Symbol.iterator");v(Array.prototype,a,{configurable:!0,writable:!0,value:function(){return M(g(this))}});return a});function M(a){a={next:a};a[Symbol.iterator]=function(){return this};return a}
+y("Promise",function(a){function b(c){this.h=0;this.i=void 0;this.g=[];this.u=!1;var e=this.j();try{c(e.resolve,e.reject)}catch(f){e.reject(f)}}function d(){this.g=null}function h(c){return c instanceof b?c:new b(function(e){e(c)})}if(a)return a;d.prototype.h=function(c){if(this.g==null){this.g=[];var e=this;this.i(function(){e.l()})}this.g.push(c)};var k=x.setTimeout;d.prototype.i=function(c){k(c,0)};d.prototype.l=function(){for(;this.g&&this.g.length;){var c=this.g;this.g=[];for(var e=0;e<c.length;++e){var f=
+c[e];c[e]=null;try{f()}catch(l){this.j(l)}}}this.g=null};d.prototype.j=function(c){this.i(function(){throw c;})};b.prototype.j=function(){function c(l){return function(n){f||(f=!0,l.call(e,n))}}var e=this,f=!1;return{resolve:c(this.F),reject:c(this.l)}};b.prototype.F=function(c){if(c===this)this.l(new TypeError("A Promise cannot resolve to itself"));else if(c instanceof b)this.H(c);else{a:switch(typeof c){case "object":var e=c!=null;break a;case "function":e=!0;break a;default:e=!1}e?this.D(c):this.o(c)}};
+b.prototype.D=function(c){var e=void 0;try{e=c.then}catch(f){this.l(f);return}typeof e=="function"?this.I(e,c):this.o(c)};b.prototype.l=function(c){this.v(2,c)};b.prototype.o=function(c){this.v(1,c)};b.prototype.v=function(c,e){if(this.h!=0)throw Error("Cannot settle("+c+", "+e+"): Promise already settled in state"+this.h);this.h=c;this.i=e;this.h===2&&this.G();this.B()};b.prototype.G=function(){var c=this;k(function(){if(c.A()){var e=x.console;typeof e!=="undefined"&&e.error(c.i)}},1)};b.prototype.A=
+function(){if(this.u)return!1;var c=x.CustomEvent,e=x.Event,f=x.dispatchEvent;if(typeof f==="undefined")return!0;typeof c==="function"?c=new c("unhandledrejection",{cancelable:!0}):typeof e==="function"?c=new e("unhandledrejection",{cancelable:!0}):(c=x.document.createEvent("CustomEvent"),c.initCustomEvent("unhandledrejection",!1,!0,c));c.promise=this;c.reason=this.i;return f(c)};b.prototype.B=function(){if(this.g!=null){for(var c=0;c<this.g.length;++c)m.h(this.g[c]);this.g=null}};var m=new d;b.prototype.H=
+function(c){var e=this.j();c.C(e.resolve,e.reject)};b.prototype.I=function(c,e){var f=this.j();try{c.call(e,f.resolve,f.reject)}catch(l){f.reject(l)}};b.prototype.then=function(c,e){function f(p,q){return typeof p=="function"?function(u){try{l(p(u))}catch(F){n(F)}}:q}var l,n,r=new b(function(p,q){l=p;n=q});this.C(f(c,l),f(e,n));return r};b.prototype.catch=function(c){return this.then(void 0,c)};b.prototype.C=function(c,e){function f(){switch(l.h){case 1:c(l.i);break;case 2:e(l.i);break;default:throw Error("Unexpected state: "+
+l.h);}}var l=this;this.g==null?m.h(f):this.g.push(f);this.u=!0};b.resolve=h;b.reject=function(c){return new b(function(e,f){f(c)})};b.race=function(c){return new b(function(e,f){for(var l=t(c),n=l.next();!n.done;n=l.next())h(n.value).C(e,f)})};b.all=function(c){var e=t(c),f=e.next();return f.done?h([]):new b(function(l,n){function r(u){return function(F){p[u]=F;q--;q==0&&l(p)}}var p=[],q=0;do p.push(void 0),q++,h(f.value).C(r(p.length-1),n),f=e.next();while(!f.done)})};return b});
+y("String.prototype.startsWith",function(a){return a?a:function(b,d){if(this==null)throw new TypeError("The 'this' value for String.prototype.startsWith must not be null or undefined");if(b instanceof RegExp)throw new TypeError("First argument to String.prototype.startsWith must not be a regular expression");var h=this.length,k=b.length;d=Math.max(0,Math.min(d|0,this.length));for(var m=0;m<k&&d<h;)if(this[d++]!=b[m++])return!1;return m>=k}});function N(a,b,d){var h=new MutationObserver(function(k,m){var c,e,f;return L(function(l){if(l.g==1){if(a())return console.debug("Too many mutations, stopping mutation observer."),m.disconnect(),l.return();c=t(k);e=c.next()}if(l.g!=3){if(e.done)return l.m(0);f=e.value;return f.type==="childList"&&f.addedNodes.length>0?(f.addedNodes.forEach(function(n){var r;return L(function(p){if(p.g==1){if(n.nodeType!==Node.ELEMENT_NODE)return p.m(0);r=n;return p.l(d(r),3)}return r.tagName!=="IMG"?(r.querySelectorAll&&
+(r.querySelectorAll("*").forEach(function(q){return L(function(u){return u.l(d(q),0)})}),r.querySelectorAll("img").forEach(function(q){return L(function(u){return u.l(b(q),0)})})),p.m(0)):p.l(b(n),0)})}),l.m(3)):f.type==="attributes"&&f.attributeName==="src"?f.target.nodeType!==Node.ELEMENT_NODE||f.target.tagName!=="IMG"?l.m(3):l.l(b(f.target),3):f.type==="attributes"&&f.attributeName==="style"&&f.target.nodeType===Node.ELEMENT_NODE?l.l(d(f.target),3):l.m(3)}e=c.next();return l.m(2)})});window.imageObserver=
+h;h.observe(document,{attributes:!0,attributeFilter:["src","style"],childList:!0,subtree:!0})}var O=Object.getOwnPropertyDescriptor(HTMLImageElement.prototype,"src");function P(a){if(O&&O.set){var b=O.set;Object.defineProperty(HTMLImageElement.prototype,"src",{set:function(d){b.call(this,d);a(this)},get:O.get,enumerable:O.enumerable,configurable:O.configurable})}};var Q=Object.getOwnPropertyDescriptor(HTMLImageElement.prototype,"src"),R=Q==null?void 0:Q.set,S="data:image/svg+xml;base64,"+btoa(' <svg width="1024" height="1024" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">\n  <defs>\n    <linearGradient id="g" x1="-100%" y1="0" x2="0" y2="0">\n      <stop offset="0" stop-color="#b0b0b0"/>\n      <stop offset=".5" stop-color="#f0f0f0"/>\n      <stop offset="1" stop-color="#b0b0b0"/>\n\n      <animateTransform id="a" \n                        attributeName="gradientTransform" \n                        type="translate" \n                        from="0" to="2" \n                        dur="1s" begin="0s"/>\n      <animateTransform id="b" \n                        attributeName="gradientTransform" \n                        type="translate" \n                        from="0" to="2" \n                        dur="1.5s" begin="a.end"/>\n      <animateTransform attributeName="gradientTransform" \n                        type="translate" \n                        from="0" to="2" \n                        dur="2s" begin="b.end" \n                        repeatCount="indefinite"/>\n    </linearGradient>\n  </defs>\n  \n  <rect width="100" height="100" fill="url(#g)"/>\n</svg>'.replace(/\s+/g,
+" "));function T(a){if(!document.baseURI||!a||a.startsWith("/"))return a;var b=(new URL(document.baseURI)).origin;return a.startsWith(b)?a.slice(b.length):a}function U(a,b){a=b===void 0||b?window.getComputedStyle(a):a.style;return a.backgroundImage&&a.backgroundImage!=="none"?(a=(a=a.backgroundImage.match(/url\(['"]?(.*?)['"]?\)/))?a[1]:null)?T(a):null:null};(function(){function a(h){return h.startsWith("/gen?prompt=")||h.startsWith("/image?query=")}function b(h){var k;(k=(k=h.getAttribute("src"))?T(k):null)&&a(k)&&(d++,R==null||R.call(h,S),(k=k.match(/aspectRatio=(\d+:\d+)$/))&&k[1]!=="1:1"&&(k=k[1].replace(":","/"),h.style.setProperty("--go-org-aspect-ratio",h.style.aspectRatio),h.style.aspectRatio=k))}var d=0;P(b);N(function(){return d>1E4},b,function(h){if(h instanceof HTMLElement){var k=U(h,!1);k||(k=U(h,!0));k&&a(k)&&(d++,h.style.setProperty("background-image",
+"url('"+S+"')","important"))}})})();}).call(this);
+
+
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estúdio MVMNTD | O Som da Próxima Geração</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Plus+Jakarta+Sans:wght@200;400;600;800&display=swap');
+
+        :root {
+            --accent: #00ff88;
+            --bg-deep: #050505;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-deep);
+            color: #ffffff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .font-sync { font-family: 'Syncopate', sans-serif; }
+
+        .neon-glow {
+            text-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+        }
+
+        /* Espaçamento generoso entre sessões para não ficar "amontoado" */
+        section {
+            padding-top: 160px;
+            padding-bottom: 160px;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .price-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .price-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-12px);
+            background: rgba(0, 255, 136, 0.02);
+            box-shadow: 0 40px 80px -20px rgba(0,0,0,0.5);
+        }
+
+        .featured-card {
+            border: 2px solid var(--accent) !important;
+            background: rgba(0, 255, 136, 0.04) !important;
+        }
+
+        .audio-wave-anim {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            height: 30px;
+        }
+
+        .audio-wave-anim div {
+            width: 4px;
+            background: var(--accent);
+            border-radius: 4px;
+            animation: bounce 1.2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { height: 8px; }
+            50% { height: 30px; }
+        }
+
+        .btn-copy {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn-copy:hover {
+            background: var(--accent);
+            color: #000;
+            border-color: var(--accent);
+        }
+
+        .floating-wa {
+            box-shadow: 0 10px 40px rgba(0, 255, 136, 0.3);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Success Toast */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: var(--accent);
+            color: #000;
+            text-align: center;
+            border-radius: 12px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1000;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        #toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+
+        .mask-linear {
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        }
+    </style>
+    <!-- 
+    PRE-DECIDED IMAGES
+    "/gen?prompt=ultra+modern+recording+studio+with+green+neon+lights+professional+gear+cinematic+lighting+dark+aesthetic&aspect=16:9"
+    "/gen?prompt=close+up+of+professional+studio+microphone+with+green+led+reflections+high+detail&aspect=4:3"
+    "/gen?prompt=music+producer+working+on+mixing+desk+with+multiple+monitors+green+lights&aspect=4:3"
+    "/gen?prompt=music+video+shoot+in+a+dark+urban+studio+with+strobe+lights+performance&aspect=4:3"
+    -->
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.right-6{right:1.5rem}.top-6{top:1.5rem}.bottom-10{bottom:2.5rem}.right-10{right:2.5rem}.top-0{top:0px}.-top-4{top:-1rem}.left-1\/2{left:50%}.z-\[100\]{z-index:100}.z-50{z-index:50}.z-\[90\]{z-index:90}.z-0{z-index:0}.z-10{z-index:10}.z-20{z-index:20}.mx-auto{margin-left:auto;margin-right:auto}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}.mb-32{margin-bottom:8rem}.mb-14{margin-bottom:3.5rem}.mb-8{margin-bottom:2rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mb-4{margin-bottom:1rem}.mt-1{margin-top:0.25rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-12{height:3rem}.h-full{height:100%}.h-64{height:16rem}.h-10{height:2.5rem}.h-1{height:0.25rem}.h-16{height:4rem}.h-32{height:8rem}.min-h-screen{min-height:100vh}.w-full{width:100%}.w-12{width:3rem}.w-10{width:2.5rem}.w-0{width:0px}.w-16{width:4rem}.w-2\/3{width:66.666667%}.w-32{width:8rem}.max-w-0{max-width:0px}.max-w-\[1400px\]{max-width:1400px}.max-w-5xl{max-width:64rem}.max-w-3xl{max-width:48rem}.max-w-xl{max-width:36rem}.shrink-0{flex-shrink:0}.flex-grow{flex-grow:1}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-12{gap:3rem}.gap-8{gap:2rem}.gap-10{gap:2.5rem}.gap-6{gap:1.5rem}.gap-24{gap:6rem}.space-y-8 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.whitespace-nowrap{white-space:nowrap}.rounded-full{border-radius:9999px}.rounded-3xl{border-radius:1.5rem}.rounded-2xl{border-radius:1rem}.rounded-xl{border-radius:0.75rem}.rounded-\[2rem\]{border-radius:2rem}.rounded-\[3rem\]{border-radius:3rem}.rounded-\[1\.5rem\]{border-radius:1.5rem}.rounded-\[2\.5rem\]{border-radius:2.5rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-white\/5{border-color:rgb(255 255 255 / 0.05)}.border-\[\#00ff88\]\/30{border-color:rgb(0 255 136 / 0.3)}.border-zinc-800{--tw-border-opacity:1;border-color:rgb(39 39 42 / var(--tw-border-opacity, 1))}.border-\[\#00ff88\]\/20{border-color:rgb(0 255 136 / 0.2)}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.bg-\[\#00ff88\]{--tw-bg-opacity:1;background-color:rgb(0 255 136 / var(--tw-bg-opacity, 1))}.bg-\[\#050505\]\/80{background-color:rgb(5 5 5 / 0.8)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-\[\#00ff88\]\/10{background-color:rgb(0 255 136 / 0.1)}.bg-white\/5{background-color:rgb(255 255 255 / 0.05)}.bg-zinc-950{--tw-bg-opacity:1;background-color:rgb(9 9 11 / var(--tw-bg-opacity, 1))}.bg-\[\#00ff88\]\/5{background-color:rgb(0 255 136 / 0.05)}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-black\/40{background-color:rgb(0 0 0 / 0.4)}.bg-zinc-700{--tw-bg-opacity:1;background-color:rgb(63 63 70 / var(--tw-bg-opacity, 1))}.bg-zinc-800{--tw-bg-opacity:1;background-color:rgb(39 39 42 / var(--tw-bg-opacity, 1))}.bg-zinc-900{--tw-bg-opacity:1;background-color:rgb(24 24 27 / var(--tw-bg-opacity, 1))}.bg-zinc-900\/50{background-color:rgb(24 24 27 / 0.5)}.object-cover{object-fit:cover}.p-12{padding:3rem}.p-8{padding:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.px-8{padding-left:2rem;padding-right:2rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.px-10{padding-left:2.5rem;padding-right:2.5rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.px-14{padding-left:3.5rem;padding-right:3.5rem}.py-40{padding-top:10rem;padding-bottom:10rem}.py-7{padding-top:1.75rem;padding-bottom:1.75rem}.pb-24{padding-bottom:6rem}.pt-24{padding-top:6rem}.pb-20{padding-bottom:5rem}.pt-40{padding-top:10rem}.pt-12{padding-top:3rem}.text-center{text-align:center}.text-\[11px\]{font-size:11px}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-7xl{font-size:4.5rem;line-height:1}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-5xl{font-size:3rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-8xl{font-size:6rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-9xl{font-size:8rem;line-height:1}.font-black{font-weight:900}.font-bold{font-weight:700}.font-light{font-weight:300}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-none{line-height:1}.leading-\[0\.85\]{line-height:0.85}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-widest{letter-spacing:0.1em}.tracking-tighter{letter-spacing:-0.05em}.tracking-\[0\.4em\]{letter-spacing:0.4em}.tracking-\[0\.3em\]{letter-spacing:0.3em}.tracking-\[0\.2em\]{letter-spacing:0.2em}.tracking-\[0\.5em\]{letter-spacing:0.5em}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-\[\#00ff88\]{--tw-text-opacity:1;color:rgb(0 255 136 / var(--tw-text-opacity, 1))}.text-zinc-400{--tw-text-opacity:1;color:rgb(161 161 170 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-zinc-500{--tw-text-opacity:1;color:rgb(113 113 122 / var(--tw-text-opacity, 1))}.text-zinc-300{--tw-text-opacity:1;color:rgb(212 212 216 / var(--tw-text-opacity, 1))}.text-zinc-600{--tw-text-opacity:1;color:rgb(82 82 91 / var(--tw-text-opacity, 1))}.text-zinc-700{--tw-text-opacity:1;color:rgb(63 63 70 / var(--tw-text-opacity, 1))}.opacity-40{opacity:0.4}.opacity-30{opacity:0.3}.opacity-0{opacity:0}.shadow-\[0_20px_40px_rgba\(0\2c 255\2c 136\2c 0\.2\)\]{--tw-shadow:0 20px 40px rgba(0,255,136,0.2);--tw-shadow-colored:0 20px 40px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-\[\#00ff88\]\/20{--tw-shadow-color:rgb(0 255 136 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.grayscale{--tw-grayscale:grayscale(100%);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-xl{--tw-backdrop-blur:blur(24px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-700{transition-duration:700ms}.hover\:-translate-y-2:hover{--tw-translate-y:-0.5rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-\[\#00ff88\]:hover{--tw-border-opacity:1;border-color:rgb(0 255 136 / var(--tw-border-opacity, 1))}.hover\:border-\[\#00ff88\]\/20:hover{border-color:rgb(0 255 136 / 0.2)}.hover\:bg-\[\#00ff88\]:hover{--tw-bg-opacity:1;background-color:rgb(0 255 136 / var(--tw-bg-opacity, 1))}.hover\:bg-\[\#00cc6a\]:hover{--tw-bg-opacity:1;background-color:rgb(0 204 106 / var(--tw-bg-opacity, 1))}.hover\:text-\[\#00ff88\]:hover{--tw-text-opacity:1;color:rgb(0 255 136 / var(--tw-text-opacity, 1))}.hover\:text-black:hover{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:max-w-\[400px\]{max-width:400px}.group:hover .group-hover\:rotate-12{--tw-rotate:12deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:opacity-100{opacity:1}.group:hover .group-hover\:grayscale-0{--tw-grayscale:grayscale(0);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width: 640px){.sm\:flex-row{flex-direction:row}}@media (min-width: 768px){.md\:flex-row{flex-direction:row}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-\[140px\]{font-size:140px}.md\:text-8xl{font-size:6rem;line-height:1}}@media (min-width: 1024px){.lg\:col-span-2{grid-column:span 2 / span 2}.lg\:flex{display:flex}.lg\:w-1\/2{width:50%}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:flex-row{flex-direction:row}}</style></head>
+<body>
+
+    <!-- TOOLBAR DE DESENVOLVEDOR (Botão de Copiar) -->
+    <div class="fixed top-6 right-6 z-[100] flex gap-3">
+        <button onclick="copyToClipboard()" class="btn-copy flex items-center gap-2 px-6 py-3 rounded-full font-black uppercase text-[11px] tracking-widest cursor-pointer group">
+            <span class="material-symbols-outlined text-sm group-hover:rotate-12 transition-transform">content_copy</span>
+            Copiar HTML para GitHub
+        </button>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast">Código copiado com sucesso! 🚀</div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/550000000000" target="_blank" class="fixed bottom-10 right-10 z-[90] floating-wa bg-[#00ff88] text-black px-8 py-5 rounded-3xl font-black uppercase text-sm tracking-tighter flex items-center gap-4 group hover:scale-105 transition-all">
+        <span class="max-w-0 overflow-hidden group-hover:max-w-[400px] transition-all duration-700 whitespace-nowrap">Agendar minha sessão agora</span>
+        <span class="material-symbols-outlined font-black">chat</span>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-[#050505]/80 backdrop-blur-xl border-b border-white/5" style="background-color: rgba(5, 5, 5, 0.95); padding: 12px 0px;">
+        <div class="max-w-[1400px] mx-auto px-10 py-6 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-[#00ff88] rounded-2xl flex items-center justify-center">
+                    <span class="material-symbols-outlined text-black font-black text-3xl">graphic_eq</span>
+                </div>
+                <div>
+                    <span class="font-sync font-bold text-2xl tracking-tighter block leading-none">MVMNTD</span>
+                    <span class="text-[10px] font-black uppercase tracking-[0.4em] opacity-40">Records Studio</span>
+                </div>
+            </div>
+            <div class="hidden lg:flex items-center gap-12 font-black uppercase text-[11px] tracking-[0.3em]">
+                <a href="#tabela" class="hover:text-[#00ff88] transition-colors">Pacotes</a>
+                <a href="#som" class="hover:text-[#00ff88] transition-colors">Portfólio</a>
+                <a href="#footer" class="hover:text-[#00ff88] transition-colors">Contato</a>
+                <a href="https://wa.me/550000000000" class="bg-white text-black px-8 py-3 rounded-xl hover:bg-[#00ff88] transition-all">Começar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-24 pb-24">
+        <div class="absolute inset-0 z-0">
+            <img src="data:image/svg+xml;base64,IDxzdmcgd2lkdGg9IjEwMjQiIGhlaWdodD0iMTAyNCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+IDxkZWZzPiA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSItMTAwJSIgeTE9IjAiIHgyPSIwIiB5Mj0iMCI+IDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2IwYjBiMCIvPiA8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjZjBmMGYwIi8+IDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2IwYjBiMCIvPiA8YW5pbWF0ZVRyYW5zZm9ybSBpZD0iYSIgYXR0cmlidXRlTmFtZT0iZ3JhZGllbnRUcmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIgZnJvbT0iMCIgdG89IjIiIGR1cj0iMXMiIGJlZ2luPSIwcyIvPiA8YW5pbWF0ZVRyYW5zZm9ybSBpZD0iYiIgYXR0cmlidXRlTmFtZT0iZ3JhZGllbnRUcmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIgZnJvbT0iMCIgdG89IjIiIGR1cj0iMS41cyIgYmVnaW49ImEuZW5kIi8+IDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9ImdyYWRpZW50VHJhbnNmb3JtIiB0eXBlPSJ0cmFuc2xhdGUiIGZyb209IjAiIHRvPSIyIiBkdXI9IjJzIiBiZWdpbj0iYi5lbmQiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+IDwvbGluZWFyR3JhZGllbnQ+IDwvZGVmcz4gPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9InVybCgjZykiLz4gPC9zdmc+" alt="Studio Background" class="w-full h-full object-cover opacity-30 grayscale mask-linear">
+        </div>
+        <div class="section-container relative z-10 w-full">
+            <div class="max-w-5xl">
+                <span class="inline-block bg-[#00ff88]/10 text-[#00ff88] border border-[#00ff88]/30 px-6 py-2 rounded-full font-black uppercase text-xs tracking-[0.3em] mb-10">Premium Recording &amp; Visuals</span>
+                <h1 class="text-7xl md:text-[140px] font-black italic uppercase font-sync leading-[0.85] tracking-tighter mb-12">
+                    Sua Música <br> <span class="text-[#00ff88] neon-glow">Elevada</span>
+                </h1>
+                <p class="text-xl md:text-3xl text-zinc-400 font-light leading-relaxed max-w-3xl mb-16">
+                    Produção, Mixagem, Masterização e Clipe. O ecossistema completo para o artista que não aceita o comum.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-8">
+                    <a href="#tabela" class="bg-[#00ff88] text-black px-14 py-6 rounded-[2rem] font-black uppercase tracking-widest text-lg text-center shadow-[0_20px_40px_rgba(0,255,136,0.2)] hover:-translate-y-2 transition-all">Ver Tabela de Preços</a>
+                    <a href="#som" class="border border-zinc-800 bg-white/5 backdrop-blur-md text-white px-14 py-6 rounded-[2rem] font-black uppercase tracking-widest text-lg text-center hover:border-[#00ff88] transition-all">Ouvir Portfólio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="tabela" class="bg-zinc-950">
+        <div class="section-container">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-32 gap-10">
+                <div class="max-w-3xl">
+                    <h2 class="text-5xl md:text-8xl font-black italic uppercase font-sync mb-10">Investimento <br> <span class="text-[#00ff88]">em Você</span></h2>
+                    <p class="text-zinc-500 text-xl leading-relaxed">Não é apenas uma gravação, é o seu legado. Escolha o plano que vai te colocar no topo do Spotify.</p>
+                </div>
+                <div class="flex items-center gap-3 bg-[#00ff88]/10 border border-[#00ff88]/30 px-6 py-3 rounded-2xl text-[#00ff88] font-black uppercase text-[10px] tracking-widest">
+                    <span class="material-symbols-outlined text-sm">verified</span>
+                    Qualidade de Exportação Internacional
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Pacote 1 -->
+                <div class="price-card rounded-[3rem] p-12 flex flex-col group">
+                    <div class="mb-12">
+                        <img src="data:image/svg+xml;base64,IDxzdmcgd2lkdGg9IjEwMjQiIGhlaWdodD0iMTAyNCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+IDxkZWZzPiA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSItMTAwJSIgeTE9IjAiIHgyPSIwIiB5Mj0iMCI+IDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2IwYjBiMCIvPiA8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjZjBmMGYwIi8+IDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2IwYjBiMCIvPiA8YW5pbWF0ZVRyYW5zZm9ybSBpZD0iYSIgYXR0cmlidXRlTmFtZT0iZ3JhZGllbnRUcmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIgZnJvbT0iMCIgdG89IjIiIGR1cj0iMXMiIGJlZ2luPSIwcyIvPiA8YW5pbWF0ZVRyYW5zZm9ybSBpZD0iYiIgYXR0cmlidXRlTmFtZT0iZ3JhZGllbnRUcmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIgZnJvbT0iMCIgdG89IjIiIGR1cj0iMS41cyIgYmVnaW49ImEuZW5kIi8+IDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9ImdyYWRpZW50VHJhbnNmb3JtIiB0eXBlPSJ0cmFuc2xhdGUiIGZyb209IjAiIHRvPSIyIiBkdXI9IjJzIiBiZWdpbj0iYi5lbmQiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+IDwvbGluZWFyR3JhZGllbnQ+IDwvZGVmcz4gPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9InVybCgjZykiLz4gPC9zdmc+" alt="Voice Pack" class="w-full h-64 object-cover rounded-[2rem] mb-8 grayscale group-hover:grayscale-0 transition-all">
+                        <span class="text-zinc-500 font-black uppercase text-[11px] tracking-[0.4em]">Essential Experience</span>
+                        <h3 class="text-4xl font-sync font-bold mt-4">VOICE PACK</h3>
+                        <p class="text-zinc-500 mt-6 text-lg leading-relaxed italic">"Ideal para quem já tem o beat e precisa de qualidade vocal."</p>
+                    </div>
+                    <div class="mb-14">
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-zinc-500 font-bold text-2xl italic">R$</span>
+                            <span class="text-8xl font-black text-white">250</span>
+                        </div>
+                    </div>
+                    <div class="space-y-8 mb-16 flex-grow">
+                        <div class="flex items-start gap-6">
+                            <div class="w-10 h-10 rounded-full bg-[#00ff88]/10 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-[#00ff88] text-xl">mic</span>
+                            </div>
+                            <div>
+                                <p class="font-black uppercase text-xs tracking-widest">Captação de Voz</p>
+                                <p class="text-zinc-500 text-sm">Tratamento acústico de elite</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-6">
+                            <div class="w-10 h-10 rounded-full bg-[#00ff88]/10 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-[#00ff88] text-xl">settings_input_component</span>
+                            </div>
+                            <div>
+                                <p class="font-black uppercase text-xs tracking-widest">Mix &amp; Master</p>
+                                <p class="text-zinc-500 text-sm">Equilíbrio perfeito de frequências</p>
+                            </div>
+                        </div>
+                        <div class="p-8 bg-[#00ff88]/5 border border-[#00ff88]/20 rounded-3xl flex items-center gap-6">
+                            <span class="material-symbols-outlined text-[#00ff88] text-3xl">redeem</span>
+                            <span class="font-black uppercase text-xs tracking-widest text-white leading-tight">BÔNUS: Arte da Capa (Foto ou IA)</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/550000000000" class="w-full py-6 border-2 border-zinc-800 text-white font-black uppercase tracking-[0.2em] rounded-2xl hover:border-[#00ff88] hover:text-[#00ff88] text-center transition-all">Reservar Sessão</a>
+                </div>
+
+                <!-- Pacote 2 (CARRO CHEFE) -->
+                <div class="price-card featured-card rounded-[3rem] p-12 flex flex-col group relative overflow-hidden">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#00ff88] text-black px-10 py-2 rounded-full font-black uppercase text-[10px] tracking-[0.4em] z-20">O Carro Chefe</div>
+                    <div class="mb-12">
+                        <img src="data:image/svg+xml;base64,IDxzdmcgd2lkdGg9IjEwMjQiIGhlaWdodD0iMTAyNCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+IDxkZWZzPiA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSItMTAwJSIgeTE9IjAiIHgyPSIwIiB5Mj0iMCI+IDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2IwYjBiMCIvPiA8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjZjBmMGYwIi8+IDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2IwYjBiMCIvPiA8YW5pbWF0ZVRyYW5zZm9ybSBpZD0iYSIgYXR0cmlidXRlTmFtZT0iZ3JhZGllbnRUcmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIgZnJvbT0iMCIgdG89IjIiIGR1cj0iMXMiIGJlZ2luPSIwcyIvPiA8YW5pbWF0ZVRyYW5zZm9ybSBpZD0iYiIgYXR0cmlidXRlTmFtZT0iZ3JhZGllbnRUcmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIgZnJvbT0iMCIgdG89IjIiIGR1cj0iMS41cyIgYmVnaW49ImEuZW5kIi8+IDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9ImdyYWRpZW50VHJhbnNmb3JtIiB0eXBlPSJ0cmFuc2xhdGUiIGZyb209IjAiIHRvPSIyIiBkdXI9IjJzIiBiZWdpbj0iYi5lbmQiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+IDwvbGluZWFyR3JhZGllbnQ+IDwvZGVmcz4gPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9InVybCgjZykiLz4gPC9zdmc+" alt="Full Production" class="w-full h-64 object-cover rounded-[2rem] mb-8 transition-transform group-hover:scale-105 duration-700">
+                        <span class="text-[#00ff88] font-black uppercase text-[11px] tracking-[0.4em]">Full Production</span>
+                        <h3 class="text-4xl font-sync font-bold mt-4">MVMNT PRO</h3>
+                        <p class="text-zinc-300 mt-6 text-lg leading-relaxed italic">"A opção mais popular: o som completo do zero ao fim."</p>
+                    </div>
+                    <div class="mb-14">
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-[#00ff88] font-bold text-2xl italic">R$</span>
+                            <span class="text-9xl font-black text-[#00ff88] neon-glow">350</span>
+                        </div>
+                    </div>
+                    <div class="space-y-8 mb-16 flex-grow">
+                        <div class="flex items-start gap-6">
+                            <div class="w-10 h-10 rounded-full bg-[#00ff88] flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-black text-xl">music_note</span>
+                            </div>
+                            <div>
+                                <p class="font-black uppercase text-xs tracking-widest text-white">Produção Instrumental</p>
+                                <p class="text-zinc-400 text-sm">Beat exclusivo para sua track</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-6">
+                            <div class="w-10 h-10 rounded-full bg-[#00ff88] flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-black text-xl">graphic_eq</span>
+                            </div>
+                            <div>
+                                <p class="font-black uppercase text-xs tracking-widest text-white">Mixagem Avançada</p>
+                                <p class="text-zinc-400 text-sm">Analog warmth + digital precision</p>
+                            </div>
+                        </div>
+                        <div class="p-8 bg-white/5 border border-white/10 rounded-3xl flex items-center gap-6">
+                            <span class="material-symbols-outlined text-[#00ff88] text-3xl">redeem</span>
+                            <span class="font-black uppercase text-xs tracking-widest text-white leading-tight">BÔNUS: Design Exclusivo da Capa</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/550000000000" class="w-full py-7 bg-[#00ff88] text-black font-black uppercase tracking-[0.3em] rounded-2xl hover:bg-[#00cc6a] text-center transition-all shadow-xl shadow-[#00ff88]/20">Começar Agora</a>
+                </div>
+
+                <!-- Pacote 3 -->
+                <div class="price-card rounded-[3rem] p-12 flex flex-col group">
+                    <div class="mb-12">
+                        <img src="data:image/svg+xml;base64,IDxzdmcgd2lkdGg9IjEwMjQiIGhlaWdodD0iMTAyNCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+IDxkZWZzPiA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSItMTAwJSIgeTE9IjAiIHgyPSIwIiB5Mj0iMCI+IDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2IwYjBiMCIvPiA8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjZjBmMGYwIi8+IDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2IwYjBiMCIvPiA8YW5pbWF0ZVRyYW5zZm9ybSBpZD0iYSIgYXR0cmlidXRlTmFtZT0iZ3JhZGllbnRUcmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIgZnJvbT0iMCIgdG89IjIiIGR1cj0iMXMiIGJlZ2luPSIwcyIvPiA8YW5pbWF0ZVRyYW5zZm9ybSBpZD0iYiIgYXR0cmlidXRlTmFtZT0iZ3JhZGllbnRUcmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIgZnJvbT0iMCIgdG89IjIiIGR1cj0iMS41cyIgYmVnaW49ImEuZW5kIi8+IDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9ImdyYWRpZW50VHJhbnNmb3JtIiB0eXBlPSJ0cmFuc2xhdGUiIGZyb209IjAiIHRvPSIyIiBkdXI9IjJzIiBiZWdpbj0iYi5lbmQiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+IDwvbGluZWFyR3JhZGllbnQ+IDwvZGVmcz4gPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9InVybCgjZykiLz4gPC9zdmc+" alt="Music Video" class="w-full h-64 object-cover rounded-[2rem] mb-8 grayscale group-hover:grayscale-0 transition-all">
+                        <span class="text-zinc-500 font-black uppercase text-[11px] tracking-[0.4em]">Elite Experience</span>
+                        <h3 class="text-4xl font-sync font-bold mt-4">STAR EXP</h3>
+                        <p class="text-zinc-500 mt-6 text-lg leading-relaxed italic">"Para quem quer lançar como artista grande."</p>
+                    </div>
+                    <div class="mb-14">
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-zinc-500 font-bold text-2xl italic">R$</span>
+                            <span class="text-8xl font-black text-white">750</span>
+                        </div>
+                    </div>
+                    <div class="space-y-8 mb-16 flex-grow">
+                        <div class="flex items-start gap-6">
+                            <div class="w-10 h-10 rounded-full bg-[#00ff88]/10 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-[#00ff88] text-xl">videocam</span>
+                            </div>
+                            <div>
+                                <p class="font-black uppercase text-xs tracking-widest">Video Clipe Studio</p>
+                                <p class="text-zinc-500 text-sm">Performance One-Take em 4K</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-6">
+                            <div class="w-10 h-10 rounded-full bg-[#00ff88]/10 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-[#00ff88] text-xl">movie_edit</span>
+                            </div>
+                            <div>
+                                <p class="font-black uppercase text-xs tracking-widest">Edição Dinâmica</p>
+                                <p class="text-zinc-500 text-sm">Cortes para Reels, TikTok e YouTube</p>
+                            </div>
+                        </div>
+                        <div class="p-8 bg-[#00ff88]/5 border border-[#00ff88]/20 rounded-3xl flex items-center gap-6">
+                            <span class="material-symbols-outlined text-[#00ff88] text-3xl">redeem</span>
+                            <span class="font-black uppercase text-xs tracking-widest text-white leading-tight">BÔNUS: Consultoria de Lançamento</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/550000000000" class="w-full py-6 border-2 border-zinc-800 text-white font-black uppercase tracking-[0.2em] rounded-2xl hover:border-[#00ff88] hover:text-[#00ff88] text-center transition-all">Dominar a Cena</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust / Audio Section -->
+    <section id="som" class="bg-black py-40">
+        <div class="section-container">
+            <div class="flex flex-col lg:flex-row gap-24 items-start">
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-6xl md:text-8xl font-black italic uppercase font-sync leading-tight mb-12">
+                        O Som que <br> <span class="text-[#00ff88]">Vibra</span>
+                    </h2>
+                    <p class="text-zinc-500 text-2xl leading-relaxed mb-16 font-light">
+                        Não falamos apenas sobre qualidade, mostramos. Ouça o resultado de projetos gravados e finalizados 100% no Estúdio MVMNTD.
+                    </p>
+                    <div class="audio-wave-anim">
+                        <div style="animation-delay: 0.1s"></div>
+                        <div style="animation-delay: 0.3s"></div>
+                        <div style="animation-delay: 0.2s"></div>
+                        <div style="animation-delay: 0.4s"></div>
+                        <div style="animation-delay: 0.6s"></div>
+                        <div style="animation-delay: 0.5s"></div>
+                    </div>
+                </div>
+                
+                <div class="w-full lg:w-1/2 space-y-8">
+                    <!-- Audio Track 1 -->
+                    <div class="bg-zinc-900/50 border border-white/5 p-8 rounded-[2.5rem] flex items-center gap-8 group hover:border-[#00ff88]/20 transition-all">
+                        <div class="w-32 h-32 shrink-0 relative overflow-hidden rounded-3xl">
+                            <img src="data:image/svg+xml;base64,IDxzdmcgd2lkdGg9IjEwMjQiIGhlaWdodD0iMTAyNCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+IDxkZWZzPiA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSItMTAwJSIgeTE9IjAiIHgyPSIwIiB5Mj0iMCI+IDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2IwYjBiMCIvPiA8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjZjBmMGYwIi8+IDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2IwYjBiMCIvPiA8YW5pbWF0ZVRyYW5zZm9ybSBpZD0iYSIgYXR0cmlidXRlTmFtZT0iZ3JhZGllbnRUcmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIgZnJvbT0iMCIgdG89IjIiIGR1cj0iMXMiIGJlZ2luPSIwcyIvPiA8YW5pbWF0ZVRyYW5zZm9ybSBpZD0iYiIgYXR0cmlidXRlTmFtZT0iZ3JhZGllbnRUcmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIgZnJvbT0iMCIgdG89IjIiIGR1cj0iMS41cyIgYmVnaW49ImEuZW5kIi8+IDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9ImdyYWRpZW50VHJhbnNmb3JtIiB0eXBlPSJ0cmFuc2xhdGUiIGZyb209IjAiIHRvPSIyIiBkdXI9IjJzIiBiZWdpbj0iYi5lbmQiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+IDwvbGluZWFyR3JhZGllbnQ+IDwvZGVmcz4gPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9InVybCgjZykiLz4gPC9zdmc+" alt="Track Art" class="w-full h-full object-cover">
+                            <button class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all cursor-pointer">
+                                <span class="material-symbols-outlined text-[#00ff88] text-5xl">play_circle</span>
+                            </button>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex justify-between items-end mb-4">
+                                <div>
+                                    <h4 class="text-2xl font-black uppercase italic tracking-tighter">Night Shift (PRO)</h4>
+                                    <p class="text-zinc-500 text-sm font-bold uppercase tracking-widest mt-1">Trap / Drill</p>
+                                </div>
+                                <span class="text-zinc-600 font-bold text-xs">03:45</span>
+                            </div>
+                            <div class="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#00ff88] w-2/3"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Audio Track 2 -->
+                    <div class="bg-zinc-900/50 border border-white/5 p-8 rounded-[2.5rem] flex items-center gap-8 group hover:border-[#00ff88]/20 transition-all">
+                        <div class="w-32 h-32 shrink-0 relative overflow-hidden rounded-3xl">
+                            <img src="data:image/svg+xml;base64,IDxzdmcgd2lkdGg9IjEwMjQiIGhlaWdodD0iMTAyNCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+IDxkZWZzPiA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSItMTAwJSIgeTE9IjAiIHgyPSIwIiB5Mj0iMCI+IDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2IwYjBiMCIvPiA8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjZjBmMGYwIi8+IDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2IwYjBiMCIvPiA8YW5pbWF0ZVRyYW5zZm9ybSBpZD0iYSIgYXR0cmlidXRlTmFtZT0iZ3JhZGllbnRUcmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIgZnJvbT0iMCIgdG89IjIiIGR1cj0iMXMiIGJlZ2luPSIwcyIvPiA8YW5pbWF0ZVRyYW5zZm9ybSBpZD0iYiIgYXR0cmlidXRlTmFtZT0iZ3JhZGllbnRUcmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIgZnJvbT0iMCIgdG89IjIiIGR1cj0iMS41cyIgYmVnaW49ImEuZW5kIi8+IDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9ImdyYWRpZW50VHJhbnNmb3JtIiB0eXBlPSJ0cmFuc2xhdGUiIGZyb209IjAiIHRvPSIyIiBkdXI9IjJzIiBiZWdpbj0iYi5lbmQiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+IDwvbGluZWFyR3JhZGllbnQ+IDwvZGVmcz4gPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9InVybCgjZykiLz4gPC9zdmc+" alt="Track Art" class="w-full h-full object-cover">
+                            <button class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all cursor-pointer">
+                                <span class="material-symbols-outlined text-[#00ff88] text-5xl">play_circle</span>
+                            </button>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex justify-between items-end mb-4">
+                                <div>
+                                    <h4 class="text-2xl font-black uppercase italic tracking-tighter">Cold Coffee (Vocal)</h4>
+                                    <p class="text-zinc-500 text-sm font-bold uppercase tracking-widest mt-1">R&amp;B / Soul</p>
+                                </div>
+                                <span class="text-zinc-600 font-bold text-xs">02:58</span>
+                            </div>
+                            <div class="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-zinc-700 w-0"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-zinc-950 border-t border-white/5 pt-40 pb-20">
+        <div class="section-container">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-24 mb-32">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-4 mb-10">
+                        <div class="w-12 h-12 bg-[#00ff88] rounded-2xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-black font-black text-3xl">graphic_eq</span>
+                        </div>
+                        <span class="font-sync font-bold text-3xl tracking-tighter uppercase">MVMNTD</span>
+                    </div>
+                    <p class="text-zinc-500 text-2xl max-w-xl font-light leading-relaxed mb-12">
+                        O futuro da cena urbana começa aqui. Criamos impacto através do som e transformamos artistas em lendas.
+                    </p>
+                    <div class="flex gap-8">
+                        <a href="#" class="w-16 h-16 rounded-[1.5rem] bg-zinc-900 flex items-center justify-center hover:bg-[#00ff88] hover:text-black transition-all">
+                            <span class="material-symbols-outlined text-2xl">brand_instagram</span>
+                        </a>
+                        <a href="#" class="w-16 h-16 rounded-[1.5rem] bg-zinc-900 flex items-center justify-center hover:bg-[#00ff88] hover:text-black transition-all">
+                            <span class="material-symbols-outlined text-2xl">share</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h5 class="text-white font-black uppercase text-xs tracking-[0.4em] mb-12">Localização</h5>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <span class="material-symbols-outlined text-[#00ff88]">location_on</span>
+                            <span class="text-zinc-500 text-lg leading-relaxed">Rua Inovação Digital, 404 <br> Vila Madalena, SP</span>
+                        </div>
+                        <div class="flex gap-6">
+                            <span class="material-symbols-outlined text-[#00ff88]">schedule</span>
+                            <span class="text-zinc-500 text-lg">Seg - Sex: 09h às 21h <br> Sáb: 10h às 18h</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-black uppercase text-xs tracking-[0.4em] mb-12">Contato</h5>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <span class="material-symbols-outlined text-[#00ff88]">mail</span>
+                            <span class="text-zinc-500 text-lg">estudio@mvmntd.com</span>
+                        </div>
+                        <div class="flex gap-6">
+                            <span class="material-symbols-outlined text-[#00ff88]">call</span>
+                            <span class="text-zinc-500 text-lg">+55 (11) 99999-9999</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10">
+                <span class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-700">© 2026 MVMNTD Records Studio • Built for Excellence</span>
+                <div class="flex gap-12 font-black uppercase text-[10px] tracking-[0.3em] text-zinc-700">
+                    <a href="#" class="hover:text-white transition-colors">Termos</a>
+                    <a href="#" class="hover:text-white transition-colors">Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Copy to Clipboard Logic
+        function copyToClipboard() {
+            // Get the entire HTML of the current document
+            const htmlCode = document.documentElement.outerHTML;
+            
+            // Use Clipboard API
+            navigator.clipboard.writeText(htmlCode).then(() => {
+                showToast();
+            }).catch(err => {
+                console.error('Erro ao copiar: ', err);
+                alert('Não foi possível copiar automaticamente. Selecione o código manualmente.');
+            });
+        }
+
+        // Show success toast
+        function showToast() {
+            const toast = document.getElementById("toast");
+            toast.className = "show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+
+        // Dynamic Nav Background on Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.backgroundColor = 'rgba(5, 5, 5, 0.95)';
+                nav.style.padding = '12px 0';
+            } else {
+                nav.style.backgroundColor = 'rgba(5, 5, 5, 0.8)';
+                nav.style.padding = '24px 0';
+            }
+        });
+
+        // Simple smooth anchor scroll for same-page links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+
+</body></html>
