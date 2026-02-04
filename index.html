@@ -66,7 +66,6 @@
         ::-webkit-scrollbar-thumb { background: #222; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
-        /* Carrossel Mobile Ajustado para caber na tela */
         @media (max-width: 768px) {
             .carousel-wrapper {
                 position: relative;
@@ -97,12 +96,11 @@
             #pacotes .price-card {
                 min-width: 82vw;
                 scroll-snap-align: center;
-                padding: 1.5rem !important; /* Reduzi o padding interno */
+                padding: 1.5rem !important;
             }
 
-            /* Ajustes de tamanho para mobile */
             #pacotes .price-card img {
-                height: 140px !important; /* Imagem menor no mobile */
+                height: 140px !important;
             }
 
             #pacotes h3 {
@@ -111,7 +109,7 @@
             }
 
             #pacotes .text-7xl {
-                font-size: 3.5rem !important; /* Preço menor */
+                font-size: 3.5rem !important;
             }
             
             #pacotes ul {
@@ -130,7 +128,7 @@
     <div class="noise"></div>
 
     <div id="modalOverlay" class="fixed inset-0 z-[110] flex items-center justify-center hidden">
-        <div class="modal-card rounded-[2.5rem] p-8 relative">
+        <div class="modal-card rounded-[2.5rem] p-8 relative" onclick="event.stopPropagation()">
             <button onclick="closeModal()" class="absolute top-6 right-6 text-zinc-500 hover:text-white transition-colors">
                 <span class="material-symbols-outlined">close</span>
             </button>
@@ -141,7 +139,7 @@
                 <div class="bg-zinc-900/80 border border-white/5 p-4 rounded-2xl w-full mb-8">
                     <p id="modalMessagePreview" class="text-zinc-400 italic text-sm leading-relaxed font-medium"></p>
                 </div>
-                <a id="modalSendBtn" href="#" target="_blank" class="w-full bg-[#1db954] hover:bg-[#1ed760] text-white py-4 rounded-2xl font-black uppercase text-sm tracking-widest flex items-center justify-center gap-3 transition-all">
+                <a id="modalSendBtn" href="#" target="_blank" style="z-index: 120; position: relative;" class="w-full bg-[#1db954] hover:bg-[#1ed760] text-white py-4 rounded-2xl font-black uppercase text-sm tracking-widest flex items-center justify-center gap-3 transition-all transform active:scale-95">
                     Enviar Mensagem
                     <span class="material-symbols-outlined text-lg">send</span>
                 </a>
@@ -189,6 +187,7 @@
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-7xl font-black italic uppercase font-sync mb-4">Nossos <span class="text-[#00ff88]">Pacotes</span></h2>
                 <p class="text-zinc-500 text-lg">Qualidade de estúdio profissional.</p>
+            </div>
             <div id="ver-pacotes" class="h-4"></div>
 
             <div class="carousel-wrapper">
@@ -267,19 +266,25 @@
             title.textContent = `PLANO ${name}`;
             const msg = `Olá! Vi seu site e tenho interesse no *Plano ${name}* (R$ ${price}). Gostaria de saber mais detalhes sobre a produção.`;
             preview.textContent = `"${msg}"`;
+            
+            // LINK API WHATSAPP (MAIS ESTÁVEL PARA TOQUE RÁPIDO)
             const encodedMsg = encodeURIComponent(msg);
-            sendBtn.href = `https://wa.me/${phone}?text=${encodedMsg}`;
+            sendBtn.href = `https://api.whatsapp.com/send?phone=${phone}&text=${encodedMsg}`;
+            
             overlay.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
+
         function closeModal() {
             const overlay = document.getElementById('modalOverlay');
             overlay.classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
+
         document.getElementById('modalOverlay').addEventListener('click', (e) => {
             if (e.target.id === 'modalOverlay') closeModal();
         });
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
